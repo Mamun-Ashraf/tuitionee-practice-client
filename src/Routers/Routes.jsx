@@ -3,6 +3,7 @@ import MainLayout from "../Layout/MainLayout";
 import Home from "../Pages/Home/Home";
 import TermsAndConditions from "../Pages/TermsAndConditions/TermsAndConditions";
 import Blogs from "../Pages/Blogs/Blogs";
+import About from "../Pages/About/About";
 import PageNotFound from "../Pages/PageNotFound/PageNotFound";
 
 const router = createBrowserRouter([
@@ -19,8 +20,12 @@ const router = createBrowserRouter([
                 element: <TermsAndConditions></TermsAndConditions>
             },
             {
-                path: 'blogs',
+                path: '/blog',
                 element: <Blogs></Blogs>
+            },
+            {
+                path: '/about',
+                element: <About></About>
             }
         ]
     },
