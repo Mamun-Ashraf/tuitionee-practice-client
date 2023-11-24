@@ -23,11 +23,11 @@ body {
 }
 
 .dark {
-  @apply bg-[#213547] text-zinc-50;
+  @apply bg-[#213547] text-white;
 }
 
 .light {
-  @apply bg-zinc-200 text-[#213547];
+  @apply bg-slate-200 text-[#213547];
 }
 
 @media (prefers-color-scheme: light) {
