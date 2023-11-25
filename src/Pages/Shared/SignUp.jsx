@@ -37,16 +37,16 @@ const SignUp = () => {
                             <input type="password" className="w-full p-2 rounded focus:outline-0" />
                         </div>
                         <div className='w-3/4 mx-auto'>
-                            <button className='w-full font-medium p-2 rounded-full text-blue-500 bg-white' type="submit">{signup}</button>
+                            <button className='w-full font-medium p-2 rounded-full text-fuchsia-600 bg-white hover:bg-green-200' type="submit">{signup}</button>
                         </div>
                     </form>
-                    <p className='text-center'>{haveAnAccount} <Link to='/login' className='text-blue-300'>{pleaseLogin}</Link></p>
-                    <div className="text-center my-3 border-b border-[#213547]">{or}</div>
-                    <button className='w-full font-medium bg-white p-2 rounded-full text-blue-500 mb-3 block'>
+                    <p className='text-center'>{haveAnAccount} <Link to='/login' className='text-fuchsia-300'>{pleaseLogin}</Link></p>
+                    <div className="text-center my-5 border-b-2 border-[#213547]">{or}</div>
+                    <button className='w-full font-medium bg-white hover:bg-green-200 p-2 rounded-full text-fuchsia-600 mb-3 block'>
                         <FontAwesomeIcon icon={faGoogle} className='mr-3' />
                         {withGoogle}
                     </button>
-                    <button className='w-full font-medium bg-white p-2 rounded-full text-blue-500 block'>
+                    <button className='w-full font-medium bg-white hover:bg-green-200 p-2 rounded-full text-fuchsia-600 block'>
                         <FontAwesomeIcon icon={faFacebook} className='mr-3' />
                         {withFacebook}
                     </button>
