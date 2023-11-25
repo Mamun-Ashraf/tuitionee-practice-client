@@ -2,17 +2,15 @@ import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Bars3Icon, MagnifyingGlassIcon, MoonIcon, SunIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { useTheme } from '../../Contexts/ThemeProvider';
-import enTranslations from '../../Language/english.json';
-import bnTranslations from '../../Language/bangla.json';
+import { useLanguage } from '../../Contexts/LanguageProvider';
 
 const Header = () => {
 
-    const [isEnglish, setIsEnglish] = useState(true);
-    const translations = isEnglish ? enTranslations : bnTranslations;
-    const { language, about, blog, login, postLeaflet, searchBox } = translations;
     const [isOpen, setIsOpen] = useState(false);
-
+    const { translations, toggleLanguage } = useLanguage();
     const { darkMode, toggleDarkMode } = useTheme();
+
+    const { language, about, blog, login, postLeaflet, searchBox } = translations.header;
 
     return (
         <nav className={`p-5 mb-12 relative ${darkMode ? 'dark' : 'light'}`}>
@@ -22,7 +20,7 @@ const Header = () => {
 
                 <div className='flex items-center gap-4'>
                     <div className={`${isOpen ? 'flex flex-col md:flex absolute md:static right-0.5 -bottom-44 bg-slate-200 dark:bg-[#213547] md:bg-inherit gap-2 px-5 py-3 transition duration-700 ease-in delay-100' : 'absolute md:static -left-96'} md:flex items-center md:gap-4 text-md font-medium`}>
-                        <button onClick={() => setIsEnglish(!isEnglish)}>
+                        <button onClick={toggleLanguage}>
                             {language}
                         </button>
                         <button onClick={toggleDarkMode} className='h-5 w-5'>

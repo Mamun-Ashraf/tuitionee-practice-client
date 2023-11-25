@@ -1,8 +1,21 @@
 {
-    "language": "বাংলা",
-    "about": "About Us",
-    "blog": "Blog",
-    "login": "Login",
-    "postLeaflet": "Post Your Leaflet",
-    "searchBox": "Find Your Tutor/Student"
+    "header": {
+        "language": "বাংলা",
+        "about": "About Us",
+        "blog": "Blog",
+        "login": "Login",
+        "postLeaflet": "Post Your Leaflet",
+        "searchBox": "Find Your Tutor/Student"
+    },
+    "footer": {
+        "address": "Office Address",
+        "place": "Level-4, 34, Awal Centre, Banani, Dhaka",
+        "available": "(Available: Sat - Thu, 10:00 AM To 7:00 PM)",
+        "links": "Useful Links",
+        "home": "Home",
+        "about": "About Us",
+        "blog": "Blog",
+        "terms": "Terms And Conditions",
+        "follow": "Follow Us"
+    }
 }
