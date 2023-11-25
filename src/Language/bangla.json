@@ -17,5 +17,21 @@
         "blog": "ব্লগ",
         "terms": "শর্তসমূহ",
         "follow": "অনুসরণ করুন"
+    },
+    "loginSignup": {
+        "signup": "সাইন আপ",
+        "name": "নাম",
+        "emailPhone": "ইমেইল/ফোন",
+        "password": "পাসওয়ার্ড",
+        "confirm": "পাসওয়ার্ড নিশ্চিত করুন",
+        "haveAnAccount": "একাউন্ট আছে?",
+        "pleaseLogin": "লগ ইন করুন",
+        "or": "অথবা",
+        "withGoogle": "গুগল দিয়ে চালিয়ে যান",
+        "withFacebook": "ফেইসবুক দিয়ে চালিয়ে যান",
+        "login": "লগ ইন",
+        "forget": "পাসওয়ার্ড ভুলে গেছেন?",
+        "newUser": "নতুন ব্যবহার করছেন?",
+        "pleaseSignup": "সাইন আপ করুন"
     }
 }

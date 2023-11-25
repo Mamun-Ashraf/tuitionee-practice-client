@@ -17,5 +17,21 @@
         "blog": "Blog",
         "terms": "Terms And Conditions",
         "follow": "Follow Us"
+    },
+    "loginSignup": {
+        "signup": "Sign Up",
+        "name": "Name",
+        "emailPhone": "Email/Phone",
+        "password": "Password",
+        "confirm": "Confirm Password",
+        "haveAnAccount": "Already have an account?",
+        "pleaseLogin": "Please Login",
+        "or": "OR",
+        "withGoogle": "CONTINUE WITH GOOGLE",
+        "withFacebook": "CONTINUE WITH FACEBOOK",
+        "login": "Login",
+        "forget": "Forget Password?",
+        "newUser": "New User?",
+        "pleaseSignup": "Please Sign Up"
     }
 }

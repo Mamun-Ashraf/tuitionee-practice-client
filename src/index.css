@@ -27,7 +27,7 @@ body {
 }
 
 .light {
-  @apply bg-slate-200 text-[#213547];
+  @apply bg-white text-[#213547];
 }
 
 @media (prefers-color-scheme: light) {

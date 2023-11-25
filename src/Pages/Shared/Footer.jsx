@@ -9,7 +9,7 @@ const Footer = () => {
     const { translations } = useLanguage();
     const { address, place, available, links, home, about, blog, terms, follow } = translations.footer;
     return (
-        <footer className='mt-12 bg-[#213547] text-white p-8 md:p-20 grid grid-cols-1 md:grid-cols-3'>
+        <footer className='bg-[#213547] text-white p-8 md:p-20 grid grid-cols-1 md:grid-cols-3'>
             <div className='mb-8 md:mb-0'>
                 <h6 className='text-xl font-semibold mb-3 underline'>{address}</h6>
                 <div className='flex flex-col gap-2'>
