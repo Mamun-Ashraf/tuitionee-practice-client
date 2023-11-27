@@ -1,9 +1,9 @@
-import React, { Children } from 'react';
+import React from 'react';
 
-const PrimaryButton = () => {
+const PrimaryButton = ({ children }) => {
     return (
         <div>
-            <button className='w-full font-medium p-2 rounded-full text-white bg-blue-400' type="submit">{Children}</button>
+            <button className='w-full font-medium p-2 rounded-full text-white bg-blue-400' type="submit">{children}</button>
         </div>
     );
 };

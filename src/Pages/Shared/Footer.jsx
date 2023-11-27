@@ -3,10 +3,10 @@ import { faFacebook, faLinkedin, faXTwitter, faYoutube } from '@fortawesome/free
 import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useLanguage } from '../../Contexts/LanguageProvider';
+import { useHeader } from '../../Contexts/HeaderProvider';
 
 const Footer = () => {
-    const { translations } = useLanguage();
+    const { translations } = useHeader();
     const { address, place, available, links, home, about, blog, terms, follow } = translations.footer;
     return (
         <footer className='bg-[#213547] text-white p-8 md:p-20 grid grid-cols-1 md:grid-cols-3'>

@@ -1,62 +1,70 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Bars3Icon, MagnifyingGlassIcon, MoonIcon, SunIcon, XMarkIcon } from '@heroicons/react/24/outline';
-import { useTheme } from '../../Contexts/ThemeProvider';
-import { useLanguage } from '../../Contexts/LanguageProvider';
+import GenericModal from '../../Components/LeafletTypeModal/LeafletTypeModal';
+import { useHeader } from '../../Contexts/HeaderProvider';
 
 const Header = () => {
 
-    const [isOpen, setIsOpen] = useState(false);
-    const { translations, toggleLanguage } = useLanguage();
-    const { darkMode, toggleDarkMode } = useTheme();
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const openModal = () => setIsModalOpen(true);
+    const closeModal = () => setIsModalOpen(false);
+
+    const [isNavOpen, setIsNavOpen] = useState(false);
+    const { darkMode, toggleDarkMode, translations, toggleLanguage } = useHeader();
 
     const { language, about, blog, login, postLeaflet, searchBox } = translations.header;
 
     return (
-        <nav className={`p-5  relative ${darkMode ? 'dark' : 'bg-green-600 text-white'}`}>
-            <div className='flex justify-between items-center'>
+        <header className='relative'>
+            <nav className={`p-5  relative ${darkMode ? 'dark' : 'bg-green-600 text-white'}`}>
+                <div className='flex justify-between items-center'>
 
-                <Link to='/' className='text-xl md:text-3xl font-bold'>Tuitionee</Link>
+                    <Link to='/' className='text-xl md:text-3xl font-bold'>Tuitionee</Link>
 
-                <div className='flex items-center gap-4'>
-                    <div className={`${isOpen ? 'flex flex-col md:flex absolute md:static right-0.5 -bottom-44 bg-slate-200 dark:bg-[#213547] md:bg-inherit gap-2 px-5 py-3 transition duration-700 ease-in delay-100' : 'absolute md:static -left-96'} md:flex items-center md:gap-4 text-md font-medium`}>
-                        <button onClick={toggleLanguage} className='hover:text-fuchsia-200'>
-                            {language}
-                        </button>
-                        <button onClick={toggleDarkMode} className='h-5 w-5 hover:text-fuchsia-200'>
-                            {
-                                darkMode ? <SunIcon></SunIcon> : <MoonIcon></MoonIcon>
-                            }
-                        </button>
-                        <NavLink to='/about' className={({ isActive }) => isActive ? "text-fuchsia-300" : "hover:text-fuchsia-300"}>
-                            {about}
-                        </NavLink>
-                        <NavLink to='/blog' className={({ isActive }) => isActive ? "text-fuchsia-300" : "hover:text-fuchsia-300"}>
-                            {blog}
-                        </NavLink>
-                        <NavLink to='/login' className={({ isActive }) => isActive ? "text-fuchsia-300" : "hover:text-fuchsia-300"}>
-                            {login}
-                        </NavLink>
+                    <div className='flex items-center gap-4'>
+                        <div className={`${isNavOpen ? 'flex flex-col md:flex absolute md:static right-0.5 -bottom-44 bg-slate-200 dark:bg-[#213547] md:bg-inherit gap-2 px-5 py-3 transition duration-700 ease-in delay-100' : 'absolute md:static -left-96'} md:flex items-center md:gap-4 text-md font-medium`}>
+                            <button onClick={toggleLanguage} className='hover:text-fuchsia-200'>
+                                {language}
+                            </button>
+                            <button onClick={toggleDarkMode} className='h-5 w-5 hover:text-fuchsia-200'>
+                                {
+                                    darkMode ? <SunIcon></SunIcon> : <MoonIcon></MoonIcon>
+                                }
+                            </button>
+                            <NavLink to='/about' className={({ isActive }) => isActive ? "text-fuchsia-300" : "hover:text-fuchsia-300"}>
+                                {about}
+                            </NavLink>
+                            <NavLink to='/blog' className={({ isActive }) => isActive ? "text-fuchsia-300" : "hover:text-fuchsia-300"}>
+                                {blog}
+                            </NavLink>
+                            <NavLink to='/login' className={({ isActive }) => isActive ? "text-fuchsia-300" : "hover:text-fuchsia-300"}>
+                                {login}
+                            </NavLink>
+                        </div>
+                        <div className='flex items-center'>
+                            <button onClick={openModal} className="bg-fuchsia-600 text-white hover:shadow-[#213547] shadow-md shadow-white font-medium rounded-full text-md md:text-lg px-4 py-2.5 text-center mr-8 md:mr-0">
+                                {postLeaflet}
+                            </button>
+                            <button onClick={() => setIsNavOpen(!isNavOpen)} className='h-6 w-6 focus:outline-none md:hidden'>
+                                {
+                                    isNavOpen ? <XMarkIcon></XMarkIcon> : <Bars3Icon></Bars3Icon>
+                                }
+                            </button>
+                        </div>
                     </div>
-                    <div className='flex items-center'>
-                        <button className="bg-fuchsia-600 text-white hover:bg-fuchsia-700 font-medium rounded-full text-md md:text-lg px-4 py-2.5 text-center mr-8 md:mr-0">{postLeaflet}</button>
-                        <button onClick={() => setIsOpen(!isOpen)} className='h-6 w-6 focus:outline-none md:hidden'>
-                            {
-                                isOpen ? <XMarkIcon></XMarkIcon> : <Bars3Icon></Bars3Icon>
-                            }
-                        </button>
-                    </div>
+
                 </div>
 
-            </div>
-
-            <div className="flex justify-between items-center bg-white rounded-full w-5/6 md:w-1/2 mx-auto mt-5 px-6 py-3">
-                <input type="search" placeholder={searchBox} className='flex-1 outline-none placeholder-fuchsia-600 bg-inherit text-fuchsia-600' />
-                <button>
-                    <MagnifyingGlassIcon className='h-4 md:h-7 w-4 md:w-7 text-fuchsia-600 hover:text-fuchsia-300' />
-                </button>
-            </div>
-        </nav>
+                <div className="flex justify-between items-center bg-white rounded-full w-5/6 md:w-1/2 mx-auto mt-5 px-6 py-3">
+                    <input type="search" placeholder={searchBox} className='flex-1 outline-none placeholder-fuchsia-600 bg-inherit text-fuchsia-600' />
+                    <button>
+                        <MagnifyingGlassIcon className='h-4 md:h-7 w-4 md:w-7 text-fuchsia-600 hover:text-fuchsia-300' />
+                    </button>
+                </div>
+            </nav>
+            <GenericModal isModalOpen={isModalOpen} closeModal={closeModal}></GenericModal>
+        </header>
     );
 };
 

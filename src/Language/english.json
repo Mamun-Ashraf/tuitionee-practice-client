@@ -21,7 +21,8 @@
     "loginSignup": {
         "signup": "Sign Up",
         "name": "Name",
-        "emailPhone": "Email/Phone",
+        "email": "Email",
+        "phone": "Phone",
         "password": "Password",
         "confirm": "Confirm Password",
         "haveAnAccount": "Already have an account?",
@@ -33,5 +34,12 @@
         "forget": "Forget Password?",
         "newUser": "New User?",
         "pleaseSignup": "Please Sign Up"
+    },
+    "leafletType": {
+        "title": "Please select leaflet type you want to post",
+        "btn1": "Want To Teach",
+        "btn2": "Need House Teacher",
+        "btn3": "Admission Going On",
+        "btn4": "Hiring Teacher"
     }
 }
