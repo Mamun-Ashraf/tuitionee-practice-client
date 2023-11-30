@@ -7,6 +7,10 @@ import About from "../Pages/About/About";
 import Login from "../Pages/Shared/Login";
 import PageNotFound from "../Pages/PageNotFound/PageNotFound";
 import SignUp from "../Pages/Shared/SignUp";
+import HouseTeacherLeaflet from "../Pages/Leaflet/HouseTeacherLeaflet";
+import AdmissionLeaflet from "../Pages/Leaflet/AdmissionLeaflet";
+import HiringTeacherLeaflet from "../Pages/Leaflet/HiringTeacherLeaflet";
+import HouseTuition from "../Pages/Leaflet/HouseTuitionLeaflet";
 
 const router = createBrowserRouter([
     {
@@ -36,7 +40,23 @@ const router = createBrowserRouter([
             {
                 path: '/signup',
                 element: <SignUp></SignUp>
-            }
+            },
+            {
+                path: '/tuition',
+                element: <HouseTuition></HouseTuition>
+            },
+            {
+                path: '/tutor',
+                element: <HouseTeacherLeaflet></HouseTeacherLeaflet>
+            },
+            {
+                path: '/admission',
+                element: <AdmissionLeaflet></AdmissionLeaflet>
+            },
+            {
+                path: '/hiring',
+                element: <HiringTeacherLeaflet></HiringTeacherLeaflet>
+            },
         ]
     },
     {

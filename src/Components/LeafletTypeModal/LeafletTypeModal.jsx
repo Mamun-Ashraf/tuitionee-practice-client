@@ -1,6 +1,6 @@
 import React from 'react';
-import { ChevronRightIcon } from '@heroicons/react/24/outline';
 import { useHeader } from '../../Contexts/HeaderProvider';
+import LeafletType from '../GenericButton/LeafletType';
 
 const LeafletTypeModal = ({ isModalOpen, closeModal }) => {
 
@@ -8,26 +8,15 @@ const LeafletTypeModal = ({ isModalOpen, closeModal }) => {
     const { title, btn1, btn2, btn3, btn4 } = translations.leafletType;
 
     return (
-        <div className={`w-72 my-12 p-5 bg-green-50 rounded absolute top-8 right-5 ${isModalOpen ? 'block' : 'hidden'}`}>
-            <h2 className='font-bold text-center mb-8'>{title}</h2>
+        <div className={`w-80 p-5 text-blueFoot bg-grayBody rounded absolute right-6 top-24 ${isModalOpen ? 'block' : 'hidden'}`}>
+            <h2 className='font-bold text-center text-blueFoot mb-8'>{title}</h2>
             <div onClick={closeModal}>
-                <div className='flex items-center justify-around text-fuchsia-600 bg-base-100 rounded-full shadow-lg shadow-[#213547] hover:shadow-fuchsia-600 mb-5 p-3'>
-                    <button className="font-semibold text-lg">{btn1}</button>
-                    <ChevronRightIcon className='h-6 w-6'></ChevronRightIcon>
-                </div>
-                <div className='flex items-center justify-around text-fuchsia-600 bg-base-100 rounded-full shadow-lg shadow-[#213547] hover:shadow-fuchsia-600 mb-5 p-3'>
-                    <button className="font-semibold text-lg">{btn2}</button>
-                    <ChevronRightIcon className='h-6 w-6'></ChevronRightIcon>
-                </div>
-                <div className='flex items-center justify-around text-fuchsia-600 bg-base-100 rounded-full shadow-lg shadow-[#213547] hover:shadow-fuchsia-600 mb-5 p-3'>
-                    <button className="font-semibold text-lg">{btn3}</button>
-                    <ChevronRightIcon className='h-6 w-6'></ChevronRightIcon>
-                </div>
-                <div className='flex items-center justify-around text-fuchsia-600 bg-base-100 rounded-full shadow-lg shadow-[#213547] hover:shadow-fuchsia-600 p-3'>
-                    <button className="font-semibold text-lg">{btn4}</button>
-                    <ChevronRightIcon className='h-6 w-6'></ChevronRightIcon>
-                </div>
+                <LeafletType to='/tuition'>{btn1}</LeafletType>
+                <LeafletType to='/tutor'>{btn2}</LeafletType>
+                <LeafletType to='/admission'>{btn3}</LeafletType>
+                <LeafletType to='/hiring'>{btn4}</LeafletType>
             </div>
+            <button onClick={closeModal} className='bg-red-400 text-white px-2 rounded-full text-lg font-medium absolute -top-5 -right-5'>X</button>
         </div>
     );
 };

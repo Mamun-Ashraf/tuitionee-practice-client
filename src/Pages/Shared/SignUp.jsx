@@ -4,54 +4,55 @@ import security from '../../assets/security.jpg';
 import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useHeader } from '../../Contexts/HeaderProvider';
+import LoginButton from '../../Components/GenericButton/LoginButton';
 
 const SignUp = () => {
 
     const { darkMode, translations } = useHeader();
     const { signup, name, email, phone, password, confirm, haveAnAccount, pleaseLogin, or, withGoogle, withFacebook, } = translations.loginSignup;
     return (
-        <div className='w-5/6 md:w-2/3 mx-auto my-8 md:flex md:gap-5 items-center'>
+        <div className='w-5/6 md:w-2/3 mx-auto md:flex md:gap-5 items-center'>
             <div className='md:w-1/2 hidden md:block'>
                 <img src={security} alt='' />
             </div>
             <div className='md:w-1/2 flex justify-center items-center'>
-                <div className={`md:w-96 p-5 md:p-7 rounded ${darkMode ? 'dark' : 'bg-green-600 text-white'}`}>
+                <div className={`md:w-96 p-5 md:p-7 rounded ${darkMode ? 'dark' : 'bg-blueHead text-white'}`}>
                     <h2 className='text-xl text-center'>{signup}</h2>
-                    <form>
-                        <div className="mb-3">
+                    <form className='space-y-3'>
+                        <div>
                             <label>{name}</label>
-                            <input type="text" className="w-full p-2 rounded focus:outline-0 text-[#213547]" />
+                            <input type="text" className="w-full p-2 rounded focus:outline-0 text-blueFoot" />
                         </div>
-                        <div className="mb-3">
+                        <div>
                             <label>{email}</label>
-                            <input type="email" className="w-full p-2 rounded focus:outline-0 text-[#213547]" />
+                            <input type="email" className="w-full p-2 rounded focus:outline-0 text-blueFoot" />
                         </div>
-                        <div className="mb-3">
+                        <div>
                             <label>{phone}</label>
-                            <input type="phone" className="w-full p-2 rounded focus:outline-0 text-[#213547]" />
+                            <input type="phone" className="w-full p-2 rounded focus:outline-0 text-blueFoot" />
                         </div>
-                        <div className="mb-3">
+                        <div>
                             <label>{password}</label>
-                            <input type="password" className="w-full p-2 rounded focus:outline-0 text-[#213547]" />
+                            <input type="password" className="w-full p-2 rounded focus:outline-0 text-blueFoot" />
                         </div>
-                        <div className="mb-3">
+                        <div>
                             <label>{confirm}</label>
-                            <input type="password" className="w-full p-2 rounded focus:outline-0 text-[#213547]" />
+                            <input type="password" className="w-full p-2 rounded focus:outline-0 text-blueFoot" />
                         </div>
                         <div className='w-3/4 mx-auto'>
-                            <button className='w-full font-medium p-2 rounded-full text-fuchsia-600 bg-white hover:bg-green-200' type="submit">{signup}</button>
+                            <LoginButton>{signup}</LoginButton>
                         </div>
                     </form>
-                    <p className='text-center'>{haveAnAccount} <Link to='/login' className='text-fuchsia-300'>{pleaseLogin}</Link></p>
-                    <div className="text-center my-5 border-b-2 border-[#213547]">{or}</div>
-                    <button className='w-full font-medium bg-white hover:bg-green-200 p-2 rounded-full text-fuchsia-600 mb-3 block'>
+                    <p className='text-center'>{haveAnAccount} <Link to='/login' className='text-yellowDeep'>{pleaseLogin}</Link></p>
+                    <div className="text-center my-5 border-b-2 border-white">{or}</div>
+                    <LoginButton className='mb-3'>
                         <FontAwesomeIcon icon={faGoogle} className='mr-3' />
                         {withGoogle}
-                    </button>
-                    <button className='w-full font-medium bg-white hover:bg-green-200 p-2 rounded-full text-fuchsia-600 block'>
+                    </LoginButton>
+                    <LoginButton>
                         <FontAwesomeIcon icon={faFacebook} className='mr-3' />
                         {withFacebook}
-                    </button>
+                    </LoginButton>
                 </div>
             </div>
         </div>

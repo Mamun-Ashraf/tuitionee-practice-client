@@ -23,11 +23,11 @@ body {
 }
 
 .dark {
-  @apply bg-[#213547] text-white;
+  @apply bg-darkColor text-white;
 }
 
 .light {
-  @apply bg-white text-[#213547];
+  @apply bg-blueHead text-white;
 }
 
 @media (prefers-color-scheme: light) {
