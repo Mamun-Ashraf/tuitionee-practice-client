@@ -11,6 +11,7 @@ import HouseTeacherLeaflet from "../Pages/Leaflet/HouseTeacherLeaflet";
 import AdmissionLeaflet from "../Pages/Leaflet/AdmissionLeaflet";
 import HiringTeacherLeaflet from "../Pages/Leaflet/HiringTeacherLeaflet";
 import HouseTuition from "../Pages/Leaflet/HouseTuitionLeaflet";
+import Leaflet from "../Pages/Leaflet/Leaflet";
 
 const router = createBrowserRouter([
     {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
             {
                 path: '/signup',
                 element: <SignUp></SignUp>
+            },
+            {
+                path: '/leaflet',
+                element: <Leaflet></Leaflet>
             },
             {
                 path: '/tuition',
