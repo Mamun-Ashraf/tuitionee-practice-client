@@ -41,5 +41,51 @@
         "btn2": "Need House Teacher",
         "btn3": "Admission Going On",
         "btn4": "Hiring Teacher"
+    },
+    "leafletHouseTuition": {
+        "heading": "This information will assist you in reaching more people and receiving faster responses.",
+        "aboutTutor": "About Tutor",
+        "address": "Address",
+        "division": "Division",
+        "district": "District",
+        "upazila": "Upazilla",
+        "area": "Your current location",
+        "status": "Status",
+        "student": "Student/Teacher/Other",
+        "subject": "Your Subject",
+        "qualification": "Qualification",
+        "institute": "Institute Name, where you are learning/working",
+        "gender": "Gender",
+        "maleFemale": "Male/Female",
+        "tutorsDemand": "Tutor's Demand",
+        "description": "Description",
+        "describe": "Please write here the class and subjects you want to teach. For example, Class: 6 to 12, Subjects: Mathematics, ICT.",
+        "salary": "Expected Salary(tk/-)",
+        "negotiable": "Negotiable",
+        "term": "I have read the",
+        "termLink": "terms and conditions",
+        "postLeaflet": "Post Leaflet"
+    },
+    "leafletHouseTeacher": {
+        "aboutStudent": "About Student",
+        "offeredSalary": "Offred Salary(tk/-)",
+        "studentsRequirements": "Student's Requirements",
+        "studentsInfo": "Student's Info",
+        "medium": "Medium",
+        "classes": "Class",
+        "subject": "Subject",
+        "describe": "Please mention here qualification and experience of teacher, that you want"
+    },
+    "admissionLeaflet": {
+        "institutesIntro": "Institutes Intro",
+        "instituteName": "Institute Name",
+        "institutesFeature": "Institutes Characteristics",
+        "describe": "Please mention here about your circular"
+    },
+    "hiringTeacherLeaflet": {
+        "aboutRecruiter": "About Recruiter",
+        "instituteName": "Institute Name",
+        "recruitersRequirements": "Recruiters Requirements",
+        "describe": "Please mention here your requirements. For example, teacher's qualification, experience etc."
     }
 }
