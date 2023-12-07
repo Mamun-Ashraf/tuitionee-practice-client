@@ -5,6 +5,7 @@ import LeafletTypeModal from '../../Components/LeafletTypeModal/LeafletTypeModal
 import { useHeader } from '../../Contexts/HeaderProvider';
 import PrimaryButton from '../../Components/GenericButton/PrimaryButton';
 import ActiveLink from '../../Components/GenericButton/ActiveLink';
+import { useAuth } from '../../Contexts/Authprovider';
 
 const Header = () => {
 
@@ -14,6 +15,8 @@ const Header = () => {
 
     const [isNavOpen, setIsNavOpen] = useState(false);
     const { darkMode, toggleDarkMode, translations, toggleLanguage } = useHeader();
+    const { user } = useAuth();
+    console.log(user);
 
     const { language, about, blog, login, postLeaflet, searchBox } = translations.header;
 
@@ -22,7 +25,7 @@ const Header = () => {
             <nav className={`p-5 ${darkMode ? 'dark' : 'light'}`}>
                 <div className='flex justify-between items-center'>
 
-                    <Link to='/leaflet' className='text-xl md:text-3xl font-bold'>Tuitionee</Link>
+                    <Link to='/' className='text-xl md:text-3xl font-bold'>Tuitionee</Link>
 
                     <div className='flex items-center gap-4'>
                         <div className={`${isNavOpen ? 'flex flex-col md:flex absolute md:static left-0.5 -bottom-44 bg-blueHead dark:bg-darkColor gap-2 px-5 py-3 transition duration-700 ease-in delay-100' : 'absolute md:static -top-96'} md:flex items-center md:gap-4 text-md font-medium`}>

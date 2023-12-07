@@ -25,21 +25,21 @@ const HouseTeacherLeaflet = () => {
                         <div>
                             <label htmlFor="" className='font-bold'>{address} :</label>
                             <div className='grid grid-cols-1 md:grid-cols-2 gap-5 ms-16'>
-                                <select name="" id="" className='p-2 focus:outline-none'>
+                                <select name="" id="" className='p-2 focus:outline-none text-darkColor rounded'>
                                     <option>{division}</option>
                                 </select>
-                                <select name="" id="" className='p-2 focus:outline-none'>
+                                <select name="" id="" className='p-2 focus:outline-none text-darkColor rounded'>
                                     <option>{district}</option>
                                 </select>
-                                <select name="" id="" className='p-2 focus:outline-none'>
+                                <select name="" id="" className='p-2 focus:outline-none text-darkColor rounded'>
                                     <option>{upazila}</option>
                                 </select>
-                                <input type="text" placeholder={area} className='p-2 focus:outline-none'></input>
+                                <input type="text" placeholder={area} className='p-2 focus:outline-none text-darkColor rounded'></input>
                             </div>
                         </div>
                         <div>
                             <label htmlFor="" className='font-bold'>{offeredSalary} :</label>
-                            <input type="number" name="" id="" className='p-2 block sm:ms-16 focus:outline-none'></input>
+                            <input type="number" name="" id="" className='p-2 block sm:ms-16 focus:outline-none text-darkColor rounded'></input>
                         </div>
                         <div className="flex items-center my-5">
                             <input id="default-checkbox" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-white border-gray-300 rounded" />
@@ -52,13 +52,13 @@ const HouseTeacherLeaflet = () => {
                         <div>
                             <label htmlFor="" className='font-bold'>{studentsInfo} :</label>
                             <div className='grid grid-cols-1 md:grid-cols-2 gap-5 ms-16'>
-                                <select name="" id="" className='p-2 focus:outline-none'>
+                                <select name="" id="" className='p-2 focus:outline-none text-darkColor rounded'>
                                     <option>{medium}</option>
                                 </select>
-                                <select name="" id="" className='p-2 focus:outline-none'>
+                                <select name="" id="" className='p-2 focus:outline-none text-darkColor rounded'>
                                     <option>{classes}</option>
                                 </select>
-                                <select name="" id="" className='p-2 focus:outline-none'>
+                                <select name="" id="" className='p-2 focus:outline-none text-darkColor rounded'>
                                     <option>{subject}</option>
                                 </select>
                             </div>
@@ -66,7 +66,7 @@ const HouseTeacherLeaflet = () => {
 
                         <div>
                             <label htmlFor="" className='font-bold'>{description} :</label>
-                            <textarea name="" id="" cols="30" rows="10" className='p-2 block sm:ms-16 focus:outline-none' placeholder={describe}></textarea>
+                            <textarea name="" id="" cols="30" rows="10" className='p-2 block sm:ms-16 focus:outline-none text-darkColor rounded' placeholder={describe}></textarea>
                         </div>
                     </div>
                 </div>

@@ -24,21 +24,21 @@ const AdmissionLeaflet = () => {
                         <h2 className='text-center font-semibold text-lg underline'>{institutesIntro}</h2>
                         <div>
                             <label htmlFor="" className='font-bold'>{instituteName} :</label>
-                            <input type="number" name="" id="" className='p-2 block sm:ms-16 focus:outline-none'></input>
+                            <input type="text" name="" id="" className='p-2 block sm:ms-16 focus:outline-none text-darkColor rounded'></input>
                         </div>
                         <div>
                             <label htmlFor="" className='font-bold'>{address} :</label>
                             <div className='grid grid-cols-1 md:grid-cols-2 gap-5 ms-16'>
-                                <select name="" id="" className='p-2 focus:outline-none'>
+                                <select name="" id="" className='p-2 focus:outline-none text-darkColor rounded'>
                                     <option>{division}</option>
                                 </select>
-                                <select name="" id="" className='p-2 focus:outline-none'>
+                                <select name="" id="" className='p-2 focus:outline-none text-darkColor rounded'>
                                     <option>{district}</option>
                                 </select>
-                                <select name="" id="" className='p-2 focus:outline-none'>
+                                <select name="" id="" className='p-2 focus:outline-none text-darkColor rounded'>
                                     <option>{upazila}</option>
                                 </select>
-                                <input type="text" placeholder={area} className='p-2 focus:outline-none'></input>
+                                <input type="text" placeholder={area} className='p-2 focus:outline-none text-darkColor rounded'></input>
                             </div>
                         </div>
                     </div>
@@ -48,7 +48,7 @@ const AdmissionLeaflet = () => {
 
                         <div>
                             <label htmlFor="" className='font-bold'>{description} :</label>
-                            <textarea name="" id="" cols="30" rows="10" className='p-2 block sm:ms-16 focus:outline-none' placeholder={describe}></textarea>
+                            <textarea name="" id="" cols="30" rows="10" className='p-2 block sm:ms-16 focus:outline-none text-darkColor rounded' placeholder={describe}></textarea>
                         </div>
                     </div>
                 </div>
