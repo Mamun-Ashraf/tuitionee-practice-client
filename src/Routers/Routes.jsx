@@ -11,6 +11,9 @@ import HouseTeacherLeaflet from "../Pages/Leaflet/HouseTeacherLeaflet";
 import AdmissionLeaflet from "../Pages/Leaflet/AdmissionLeaflet";
 import HiringTeacherLeaflet from "../Pages/Leaflet/HiringTeacherLeaflet";
 import HouseTuition from "../Pages/Leaflet/HouseTuitionLeaflet";
+import PrivateRoute from "./PrivateRoute";
+import MyLeaflet from "../Pages/MyLeaflet/MyLeaflet";
+import ProfileModal from "../Components/Modals/ProfileModal";
 
 const router = createBrowserRouter([
     {
@@ -43,20 +46,24 @@ const router = createBrowserRouter([
             },
             {
                 path: '/tuition',
-                element: <HouseTuition></HouseTuition>
+                element: <PrivateRoute><HouseTuition></HouseTuition></PrivateRoute>
             },
             {
                 path: '/tutor',
-                element: <HouseTeacherLeaflet></HouseTeacherLeaflet>
+                element: <PrivateRoute><HouseTeacherLeaflet></HouseTeacherLeaflet></PrivateRoute>
             },
             {
                 path: '/admission',
-                element: <AdmissionLeaflet></AdmissionLeaflet>
+                element: <PrivateRoute><AdmissionLeaflet></AdmissionLeaflet></PrivateRoute>
             },
             {
                 path: '/hiring',
-                element: <HiringTeacherLeaflet></HiringTeacherLeaflet>
+                element: <PrivateRoute><HiringTeacherLeaflet></HiringTeacherLeaflet></PrivateRoute>
             },
+            {
+                path:'/myLeaflet',
+                element:<PrivateRoute><MyLeaflet></MyLeaflet></PrivateRoute>
+            }
         ]
     },
     {

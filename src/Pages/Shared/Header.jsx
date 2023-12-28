@@ -1,24 +1,28 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Bars3Icon, MagnifyingGlassIcon, MoonIcon, SunIcon, XMarkIcon } from '@heroicons/react/24/outline';
-import LeafletTypeModal from '../../Components/LeafletTypeModal/LeafletTypeModal';
+import { Bars3Icon, MagnifyingGlassIcon, MoonIcon, SunIcon, UserCircleIcon, XMarkIcon } from '@heroicons/react/24/solid';
+import LeafletTypeModal from '../../Components/Modals/LeafletTypeModal';
 import { useHeader } from '../../Contexts/HeaderProvider';
 import PrimaryButton from '../../Components/GenericButton/PrimaryButton';
 import ActiveLink from '../../Components/GenericButton/ActiveLink';
-import { useAuth } from '../../Contexts/Authprovider';
+import { useAuth } from '../../Contexts/AuthProvider';
+import ProfileModal from '../../Components/Modals/ProfileModal';
 
 const Header = () => {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const openModal = () => setIsModalOpen(true);
     const closeModal = () => setIsModalOpen(false);
+    const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
+    const openProfileModal = () => setIsProfileModalOpen(true);
+    const closeProfileModal = () => setIsProfileModalOpen(false);
 
     const [isNavOpen, setIsNavOpen] = useState(false);
     const { darkMode, toggleDarkMode, translations, toggleLanguage } = useHeader();
-    const { user } = useAuth();
-    console.log(user);
 
     const { language, about, blog, login, postLeaflet, searchBox } = translations.header;
+
+    const { user } = useAuth();
 
     return (
         <header className='relative mb-10'>
@@ -28,7 +32,10 @@ const Header = () => {
                     <Link to='/' className='text-xl md:text-3xl font-bold'>Tuitionee</Link>
 
                     <div className='flex items-center gap-4'>
-                        <div className={`${isNavOpen ? 'flex flex-col md:flex absolute md:static left-0.5 -bottom-44 bg-blueHead dark:bg-darkColor gap-2 px-5 py-3 transition duration-700 ease-in delay-100' : 'absolute md:static -top-96'} md:flex items-center md:gap-4 text-md font-medium`}>
+                        <div className={`${isNavOpen ? 'flex flex-col md:flex absolute md:static left-0.5 -bottom-56 bg-blueHead dark:bg-darkColor gap-2 px-5 py-3 transition duration-700 ease-in delay-100' : 'absolute md:static -top-96'} md:flex items-center md:gap-4 text-md font-medium`}>
+                            <ActiveLink to='/about'>{about}</ActiveLink>
+                            <ActiveLink to='/blog'>{blog}</ActiveLink>
+                            <ActiveLink to='/login'>{login}</ActiveLink>
                             <button onClick={toggleLanguage} className='hover:text-yellowBtn focus:outline-0 '>
                                 {language}
                             </button>
@@ -37,9 +44,13 @@ const Header = () => {
                                     darkMode ? <SunIcon></SunIcon> : <MoonIcon></MoonIcon>
                                 }
                             </button>
-                            <ActiveLink to='/about'>{about}</ActiveLink>
-                            <ActiveLink to='/blog'>{blog}</ActiveLink>
-                            <ActiveLink to='/login'>{login}</ActiveLink>
+                            <button onClick={openProfileModal} className='h-6 w-6 hover:text-yellowBtn focus:outline-0 '>
+                                {
+                                    user?.photoURL ?
+                                        <img src={user.photoURL} className='w-6 h-6 rounded-full' alt="" />
+                                        : <UserCircleIcon></UserCircleIcon>
+                                }
+                            </button>
                         </div>
                         <div className='flex items-center'>
                             <PrimaryButton openModal={openModal}>{postLeaflet}</PrimaryButton>
@@ -61,6 +72,7 @@ const Header = () => {
                 </div>
             </nav>
             <LeafletTypeModal isModalOpen={isModalOpen} closeModal={closeModal}></LeafletTypeModal>
+            <ProfileModal isProfileModalOpen={isProfileModalOpen} closeProfileModal={closeProfileModal}></ProfileModal>
         </header>
     );
 };

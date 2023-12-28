@@ -8,7 +8,7 @@ const LeafletTypeModal = ({ isModalOpen, closeModal }) => {
     const { title, btn1, btn2, btn3, btn4 } = translations.leafletType;
 
     return (
-        <div className={`w-80 p-5 text-blueFoot bg-grayBody rounded absolute right-6 top-24 ${isModalOpen ? 'block' : 'hidden'}`}>
+        <div className={`w-72 p-5 text-blueFoot bg-grayBody rounded absolute right-6 top-24 ${isModalOpen ? 'block' : 'hidden'}`}>
             <h2 className='font-bold text-center text-blueFoot mb-8'>{title}</h2>
             <div onClick={closeModal}>
                 <LeafletType to='/tuition'>{btn1}</LeafletType>

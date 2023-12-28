@@ -3,8 +3,11 @@ import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import { useHeader } from '../../Contexts/HeaderProvider';
 import LoginButton from '../../Components/GenericButton/LoginButton';
+import useTitle from '../../Hooks/useTitle';
 
 const HouseTeacherLeaflet = () => {
+
+    useTitle('Tutor');
 
     const { darkMode, translations } = useHeader();
     const { heading, address, division, district, upazila, area, description, negotiable, term, termLink, postLeaflet } = translations.leafletHouseTuition;

@@ -1,23 +1,58 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import security from '../../assets/security.jpg';
 import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useHeader } from '../../Contexts/HeaderProvider';
 import LoginButton from '../../Components/GenericButton/LoginButton';
 import { useForm } from 'react-hook-form';
+import { useAuth } from '../../Contexts/AuthProvider';
+import toast from 'react-hot-toast';
+import useTitle from '../../Hooks/useTitle';
 
 const SignUp = () => {
 
+    useTitle('SignUp');
+    const [error, setError] = useState('');
+
     const { darkMode, translations } = useHeader();
-    const { signup, name, email, phone, password, confirm, haveAnAccount, pleaseLogin, or, withGoogle, withFacebook, } = translations.loginSignup;
+    const { signup, name, email, password, confirm, haveAnAccount, pleaseLogin, or, withGoogle, withFacebook, } = translations.loginSignup;
 
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { createUser, verifyEmail, updateUserProfile } = useAuth();
+    const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();
+
     const handleSignUp = data => {
-        console.log(data)
+        const { name, email, password, confirmPassword } = data;
+        createUser(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+                reset();
+                setError('');
+                handleUpdateUserProfile(name)
+                handleEmailVerification();
+            })
+            .catch(error => {
+                console.error(error)
+                setError(error.message);
+            })
     };
+    
+    const handleUpdateUserProfile = (name) => {
+        const profile = {displayName: name}
+        
+        updateUserProfile(profile)
+        .then(() => console.log('Profile Updated'))
+        .catch(error => console.error(error))
+    }
 
-
+    const handleEmailVerification = () =>{
+        verifyEmail()
+        .then(() => {
+            toast.success('Please verify your email address');
+        } )
+        .catch(error => console.error(error));
+    }
 
     return (
         <div className='w-5/6 md:w-2/3 mx-auto md:flex md:gap-5 items-center'>
@@ -30,25 +65,19 @@ const SignUp = () => {
                     <form onSubmit={handleSubmit(handleSignUp)} className='space-y-3'>
                         <div>
                             <label>{name}</label>
-                            <input type="text" {...register("name", { required: true })} className="w-full p-2 rounded focus:outline-0 text-blueFoot" />
+                            <input
+                                type="text"
+                                {...register("name", { required: true })}
+                                className="w-full p-2 rounded focus:outline-0 text-blueFoot" />
                             {errors.name && <span className='text-red-300'>Name is required</span>}
                         </div>
                         <div>
                             <label>{email}</label>
-                            <input type="email" {...register("email", { required: true })} className="w-full p-2 rounded focus:outline-0 text-blueFoot" />
-                            {errors.email && <span className='text-red-300'>Email is required</span>}
-                        </div>
-                        <div>
-                            <label>{phone}</label>
-                            <input type="tel"
-                                {...register("phone",
-                                    {
-                                        required: 'Phone Number is required',
-                                        pattern: { value: /^[0-9]{11}$/, message: 'Invalid phone number format' }
-                                    }
-                                )}
+                            <input
+                                type="email"
+                                {...register("email", { required: 'Email is required' })}
                                 className="w-full p-2 rounded focus:outline-0 text-blueFoot" />
-                            {errors.phone && <span className='text-red-300'>{errors.phone.message}</span>}
+                            {errors.email && <span className='text-red-300'>{errors.email.message}</span>}
                         </div>
                         <div>
                             <label>{password}</label>
@@ -57,7 +86,7 @@ const SignUp = () => {
                                     {
                                         required: 'Password is required',
                                         minLength: { value: 6, message: 'Password must be 6 characters long or more' },
-                                        pattern: { value: /^[A-Za-z]+$/i, message: 'Password must be contain at least one uppercase or lowercase letter' }
+                                        pattern: { value: /^[A-Za-z]/i, message: 'Password must be contain at least one uppercase or lowercase letter' }
                                     }
                                 )}
                                 className="w-full p-2 rounded focus:outline-0 text-blueFoot" />
@@ -68,27 +97,19 @@ const SignUp = () => {
                             <input type="password"
                                 {...register("confirmPassword",
                                     {
-                                        required: 'Confirm Password is required',
-                                        validate: (value) => value === watch('password') || 'Password does not match'
+                                        required: 'Please confirm your password',
+                                        validate: (confirmPassword) => confirmPassword === watch('password') || 'Password does not match'
                                     }
                                 )}
                                 className="w-full p-2 rounded focus:outline-0 text-blueFoot" />
                             {errors.confirmPassword && <span className='text-red-300'>{errors.confirmPassword.message}</span>}
                         </div>
+                        <h2 className='text-red-300'>{error}</h2>
                         <div className='w-3/4 mx-auto'>
                             <LoginButton>{signup}</LoginButton>
                         </div>
                     </form>
                     <p className='text-center'>{haveAnAccount} <Link to='/login' className='text-yellowDeep'>{pleaseLogin}</Link></p>
-                    <div className="text-center my-5 border-b-2 border-white">{or}</div>
-                    <LoginButton className='mb-3'>
-                        <FontAwesomeIcon icon={faGoogle} className='mr-3' />
-                        {withGoogle}
-                    </LoginButton>
-                    <LoginButton>
-                        <FontAwesomeIcon icon={faFacebook} className='mr-3' />
-                        {withFacebook}
-                    </LoginButton>
                 </div>
             </div>
         </div>

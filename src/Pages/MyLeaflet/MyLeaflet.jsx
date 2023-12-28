@@ -1,14 +1,13 @@
 import React from 'react';
 import useTitle from '../../Hooks/useTitle';
 
-const Blogs = () => {
-
-    useTitle('Blogs');
+const MyLeaflet = () => {
+    useTitle('My Leaflet');
     return (
         <div>
-            <h2>Blogs</h2>
+            <h2>My Leaflet</h2>
         </div>
     );
 };
 
-export default Blogs;
+export default MyLeaflet;
