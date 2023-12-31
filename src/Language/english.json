@@ -5,7 +5,7 @@
         "blog": "Blog",
         "login": "Login",
         "postLeaflet": "Post Your Leaflet",
-        "searchBox": "Find Your Tutor/Student"
+        "searchBox": "Discover your ideal tutor/student"
     },
     "footer": {
         "address": "Office Address",
@@ -37,24 +37,26 @@
     },
     "leafletType": {
         "title": "Please select leaflet type you want to post",
-        "btn1": "Want To Teach",
-        "btn2": "Need House Teacher",
-        "btn3": "Admission Going On",
-        "btn4": "Hiring Teacher"
+        "btnTuition": "Want To Teach",
+        "btnTutor": "Need House Teacher",
+        "btnAdmission": "Admission Going On",
+        "btnHiring": "Hiring Teacher",
+        "btnMyLeaflet": "My Leaflet",
+        "btnLogout": "Logout"
     },
     "leafletHouseTuition": {
         "heading": "This information will assist you in reaching more people and receiving faster responses.",
         "aboutTutor": "About Tutor",
         "address": "Address",
-        "division": "Division",
-        "district": "District",
-        "upazila": "Upazilla",
-        "area": "Your current location",
+        "chooseDivision": "Division",
+        "chooseDistrict": "District",
+        "chooseUpazila": "Upazilla",
+        "area": "Area, where you want to teach",
         "status": "Status",
-        "student": "Student/Teacher/Other",
-        "subject": "Your Subject",
+        "student": "Learner/Teacher/Other",
+        "subject": "Subject name, which you are studying/have studied",
         "qualification": "Qualification",
-        "institute": "Institute Name, where you are learning/working",
+        "institute": "Institute name, where you are studying/working",
         "gender": "Gender",
         "maleFemale": "Male/Female",
         "tutorsDemand": "Tutor's Demand",
@@ -68,24 +70,20 @@
     },
     "leafletHouseTeacher": {
         "aboutStudent": "About Student",
-        "offeredSalary": "Offred Salary(tk/-)",
+        "area": "Location of your residence",
+        "offeredSalary": "Offered Salary(tk/-)",
         "studentsRequirements": "Student's Requirements",
         "studentsInfo": "Student's Info",
         "medium": "Medium",
         "classes": "Class",
         "subject": "Subject",
-        "describe": "Please mention here qualification and experience of teacher, that you want"
+        "describe": "Please mention here qualification and experience of teacher, that you demand."
     },
-    "admissionLeaflet": {
-        "institutesIntro": "Institutes Intro",
+    "circularLeaflet": {
+        "institutesIntro": "About Institute/Recruiter",
         "instituteName": "Institute Name",
-        "institutesFeature": "Institutes Characteristics",
+        "area":"Location of your institution",
+        "circularDetails": "Details about circular",
         "describe": "Please mention here about your circular"
-    },
-    "hiringTeacherLeaflet": {
-        "aboutRecruiter": "About Recruiter",
-        "instituteName": "Institute Name",
-        "recruitersRequirements": "Recruiters Requirements",
-        "describe": "Please mention here your requirements. For example, teacher's qualification, experience etc."
     }
 }

@@ -5,7 +5,7 @@
         "blog": "ব্লগ",
         "login": "লগ ইন",
         "postLeaflet": "লিফলেট পোস্ট করুন",
-        "searchBox": "শিক্ষক/ছাত্র খুঁজুন"
+        "searchBox": "আপনার আদর্শ শিক্ষক/ছাত্র খুঁজুন"
     },
     "footer": {
         "address": "অফিসের ঠিকানা",
@@ -37,22 +37,24 @@
     },
     "leafletType": {
         "title": "যে ধরনের লিফলেট পোস্ট করতে চান তা নির্বাচন করুন",
-        "btn1": "পড়াতে চাই",
-        "btn2": "গৃহ শিক্ষক চাই",
-        "btn3": "ভর্তি চলছে",
-        "btn4": "শিক্ষক নিয়োগ"
+        "btnTuition": "পড়াতে চাই",
+        "btnTutor": "গৃহ শিক্ষক চাই",
+        "btnAdmission": "ভর্তি চলছে",
+        "btnHiring": "শিক্ষক নিয়োগ",
+        "btnMyLeaflet": "আমার লিফলেট",
+        "btnLogout": "লগ আউট"
     },
     "leafletHouseTuition": {
         "heading": "এই তথ্যসমূহ আপনার লিফলেটটি অধিক মানুষের কাছে পৌছাতে এবং দ্রুত সাড়া পেতে সাহায্য করবে।",
         "aboutTutor": "শিক্ষক সম্পর্কিত",
         "address": "ঠিকানা",
-        "division": "বিভাগ",
-        "district": "জেলা",
-        "upazila": "উপজেলা",
-        "area": "বর্তমানে যে এলাকায় বসবাস করছেন",
+        "chooseDivision": "বিভাগ",
+        "chooseDistrict": "জেলা",
+        "chooseUpazila": "উপজেলা",
+        "area": "যে এলাকায় পড়াতে চান",
         "status": "স্ট্যাটাস",
-        "student": "ছাত্র/শিক্ষক/অন্যান্য",
-        "subject": "যে বিষয়ে পড়াশুনা করেছেন",
+        "student": "শিক্ষার্থী/শিক্ষক/অন্যান্য",
+        "subject": "যে বিষয়ে পড়াশুনা করছেন/করেছেন",
         "qualification": "যোগ্যতা",
         "institute": "যে প্রতিষ্টানে পড়াশুনা করছেন/চাকরি করছেন",
         "gender": "লিঙ্গ",
@@ -68,6 +70,7 @@
     },
     "leafletHouseTeacher": {
         "aboutStudent": "ছাত্র সম্পর্কিত",
+        "area":"বাসার লোকেশন",
         "offeredSalary": "বেতন(টাকা/-)",
         "studentsRequirements": "ছাত্রের প্রয়োজনীয় বিষয়াদি",
         "studentsInfo": "ছাত্রের তথ্য",
@@ -76,16 +79,11 @@
         "subject": "বিষয়",
         "describe": "যে যোগ্যতা ও অভিজ্ঞতা সম্পন্ন শিক্ষক চাচ্ছেন তা উল্লেখ করুন"
     },
-    "admissionLeaflet": {
-        "institutesIntro": "প্রতিষ্টান পরিচিতি",
+    "circularLeaflet": {
+        "institutesIntro": "প্রতিষ্টান/নিয়োগকারী সম্পর্কিত",
         "instituteName": "প্রতিষ্টানের নাম",
-        "institutesFeature": "প্রতিষ্টানের বৈশিষ্ট্য সমূহ",
+        "area":"প্রতিষ্টানের লোকেশন",
+        "circularDetails": "বিজ্ঞাপন সম্পর্কিত বিস্তারিত",
         "describe": "আপনার বিজ্ঞাপন সম্পর্কিত তথ্য উল্লেখ করুন"
-    },
-    "hiringTeacherLeaflet": {
-        "aboutRecruiter": "নিয়োগকারী সম্পর্কিত",
-        "instituteName": "প্রতিষ্টানের নাম",
-        "recruitersRequirements": "নিয়োগকারী্র প্রয়োজনীয় বিষয়াদি",
-        "describe": "যে যোগ্যতা ও অভিজ্ঞতা সম্পন্ন শিক্ষক চাচ্ছেন তা উল্লেখ করুন"
     }
 }

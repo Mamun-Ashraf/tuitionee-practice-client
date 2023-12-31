@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 const ProfileModal = ({ isProfileModalOpen, closeProfileModal }) => {
 
     const { translations } = useHeader();
-    const { title, btn1, btn2, btn3, btn4 } = translations.leafletType;
+    const { title, btnMyLeaflet, btnLogout } = translations.leafletType;
     const { user, logOut } = useAuth();
 
     return (
@@ -21,9 +21,9 @@ const ProfileModal = ({ isProfileModalOpen, closeProfileModal }) => {
             }
             <h2 className='text-center text-lg font-bold mb-5'>{user?.displayName}</h2>
             <div onClick={closeProfileModal}>
-                <LeafletType to='/myLeaflet'>My Leaflet</LeafletType>
+                <LeafletType to='/myLeaflet'>{btnMyLeaflet}</LeafletType>
                 <div onClick={logOut} className='flex items-center justify-around rounded-full shadow-lg shadow-darkColor transform hover:scale-105 duration-500 mb-3 p-2'>
-                    <button className='font-semibold text-lg text-red-300'>Logout</button>
+                    <button className='font-semibold text-md text-red-300'>{btnLogout}</button>
                     <ArrowRightOnRectangleIcon className='h-6 w-6 text-red-300'></ArrowRightOnRectangleIcon>
                 </div>
             </div>
